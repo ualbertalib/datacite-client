@@ -1,15 +1,13 @@
 # Datacite
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/datacite`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby client for Datacite API Version 2 See https://support.datacite.org/reference/dois-2.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'datacite'
+gem 'datacite-client'
 ```
 
 And then execute:
@@ -18,11 +16,43 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install datacite
+    $ gem install datacite-client
+
+## Configure
+
+You can configure the following default values by overriding these values using Datacite.configure method or setting the appropriate environment variable.
+
+host          # ENV['DATACITE_HOST'] or 'api.test.datacite.org' by default
+username      # ENV['DATACITE_USERNAME']
+password      # ENV['DATACITE_PASSWORD']
+prefix        # ENV['DATACITE_PREFIX']
+
 
 ## Usage
 
-TODO: Write usage instructions here
+Metadata is expected in the following format
+```
+{
+  data: {
+    attributes: {}
+  }
+}
+see https://support.datacite.org/reference/dois-2#put_dois-id for more information on specific attributes.
+```
+### Mint/Create
+`Datacite::DOI.mint` will create a draft doi.
+`Datacite::DOI.mint(metadata)` will reserve a new identifier and publish the metadata.
+### Update
+`Datacite::DOI.modify(doi, metadata)` will update the metadata.
+
+There are three events 'publish', 'register', and 'hide'.  You can use `modify` with metadata in the following format to trigger these events.
+{
+  data: {
+    attributes: {
+        event: 'publish'
+    }
+  }
+}
 
 ## Development
 

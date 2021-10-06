@@ -50,4 +50,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rubocop', '~> 1.7'
   spec.add_development_dependency 'vcr', '5.0'
+  spec.add_development_dependency 'webmock'
 end
