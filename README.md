@@ -20,13 +20,13 @@ Or install it yourself as:
 
 ## Configure
 
-You can configure the following default values by overriding these values using Datacite.configure method or setting the appropriate environment variable.
-
+You can configure the following default values by overriding these values using `Datacite.configure` method or setting the appropriate environment variable.
+```
 host          # ENV['DATACITE_HOST'] or 'api.test.datacite.org' by default
 username      # ENV['DATACITE_USERNAME']
 password      # ENV['DATACITE_PASSWORD']
 prefix        # ENV['DATACITE_PREFIX']
-
+```
 
 ## Usage
 
@@ -46,6 +46,7 @@ see https://support.datacite.org/reference/dois-2#put_dois-id for more informati
 `Datacite::DOI.modify(doi, metadata)` will update the metadata.
 
 There are three events 'publish', 'register', and 'hide'.  You can use `modify` with metadata in the following format to trigger these events.
+```
 {
   data: {
     attributes: {
@@ -53,7 +54,7 @@ There are three events 'publish', 'register', and 'hide'.  You can use `modify` 
     }
   }
 }
-
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -67,4 +68,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-# datacite-client
