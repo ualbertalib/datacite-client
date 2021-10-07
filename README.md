@@ -40,10 +40,10 @@ Metadata is expected in the following format
 see https://support.datacite.org/reference/dois-2#put_dois-id for more information on specific attributes.
 ```
 ### Mint/Create
-`Datacite::DOI.mint` will create a draft doi.
-`Datacite::DOI.mint(metadata)` will reserve a new identifier and publish the metadata.
+`Datacite::Client.mint` will create a draft doi.
+`Datacite::Client.mint(metadata)` will reserve a new identifier and publish the metadata.
 ### Update
-`Datacite::DOI.modify(doi, metadata)` will update the metadata.
+`Datacite::Client.modify(doi, metadata)` will update the metadata.
 
 There are three events 'publish', 'register', and 'hide'.  You can use `modify` with metadata in the following format to trigger these events.
 ```
