@@ -46,18 +46,24 @@ Attributes is expected in the following format
     "resourceTypeGeneral": "Text"
   }
 }
-see https://support.datacite.org/reference/dois-2#put_dois-id for more information on specific attributes.
 ```
+see https://support.datacite.org/reference/dois-2#put_dois-id for more information on specific attributes and https://schema.datacite.org/json/kernel-4.3/datacite_4.3_schema.json for validation.
+
 ### Mint/Create
 `Datacite::Client.mint` will create a draft doi.
+
 `Datacite::Client.mint(attributes)` will reserve a new identifier and publish the metadata.
 ### Update
 `Datacite::Client.modify(doi, attributes)` will update the metadata.
 
-There are three events 'publish', 'register', and 'hide'.  You can use `modify` with these attributes in the following format to trigger these events.
+There are three events 'publish' [`Datacite::Event::PUBLISH`], 'register' [`Datacite::Event::REGISTER`], and 'hide' [`Datacite::Event::HIDE`].  You can use `Datacite::Client#modify` by including the event in your `attributes`:
 ```
 event: 'publish'
 ```
+or using the keyword arguments explicitly to update the metadata and trigger the event:
+`Datacite::Client.modify(doi, attributes, event: , reason:)` 
+
+Search for `A word on states - publishing to findable` in https://support.datacite.org/docs/api-create-dois for more information about events.
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -66,7 +72,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/datacite.
+Bug reports and pull requests are welcome on GitHub at https://github.com/pgwillia/datacite.
 
 ## License
 

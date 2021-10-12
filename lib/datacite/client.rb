@@ -20,12 +20,28 @@ module Datacite
       @body = metadata(attributes).to_json
     end
 
+    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def make_request
       response = http.request(request)
-      Datacite::DOIResponse.new(JSON.parse(response.read_body, symbolize_names: true))
+      case response
+      when Net::HTTPOK, Net::HTTPCreated
+        Datacite::DOIResponse.new(JSON.parse(response.read_body, symbolize_names: true))
+      when Net::HTTPUnprocessableEntity
+        raise Datacite::UnprocessableError, error_description(response.read_body)
+      when Net::HTTPNotFound
+        raise Datacite::NotFoundError, error_description(response.read_body)
+      when Net::HTTPUnauthorized
+        raise Datacite::UnauthorizedError, error_description(response.read_body)
+      else
+        raise Datacite::Error, error_description(response.read_body)
+      end
     end
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
-    def self.mint(attributes = nil)
+    def self.mint(attributes = {})
+      attributes[:event] = Datacite::Event::PUBLISH unless attributes.empty?
+      attributes[:prefix] = Datacite.config.prefix
+
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois"),
         request_klass: Net::HTTP::Post,
@@ -35,7 +51,9 @@ module Datacite
       client.make_request
     end
 
-    def self.modify(doi, attributes)
+    def self.modify(doi, attributes, event: nil, reason: nil)
+      attributes[:event] = event unless event.nil?
+      attributes[:reason] = reason unless reason.nil?
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois/#{doi}"),
         request_klass: Net::HTTP::Put,
@@ -60,12 +78,16 @@ module Datacite
       request
     end
 
-    def metadata(attributes)
+    def metadata(attributes = {})
       {
         data: {
           attributes: attributes
         }
       }
+    end
+
+    def error_description(response_body)
+      JSON.parse(response_body, symbolize_names: true)[:errors].map { |error| error[:title] }.join(', ')
     end
   end
 end

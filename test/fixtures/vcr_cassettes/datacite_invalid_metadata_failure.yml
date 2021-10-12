@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.test.datacite.org/dois
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"one":"one","event":"publish","prefix":"10.80243"}}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.test.datacite.org
+      Content-Type:
+      - application/vnd.api+json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 12 Oct 2021 15:54:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 422 Unprocessable Entity
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      Server:
+      - nginx/1.14.0 + Phusion Passenger(R) 6.0.10
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"source":"url","uid":"10.80243/3ntw-p508","title":"Can''t
+        be blank"}]}'
+    http_version: 
+  recorded_at: Tue, 12 Oct 2021 15:54:02 GMT
+recorded_with: VCR 5.0.0

@@ -23,7 +23,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 06 Oct 2021 19:46:27 GMT
+      - Tue, 12 Oct 2021 15:54:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,34 +33,16 @@ http_interactions:
       Status:
       - 201 Created
       Location:
-      - https://api.test.datacite.org/dois/4779138
+      - https://api.test.datacite.org/dois/4820744
       Cache-Control:
       - max-age=0, private, must-revalidate
       Vary:
       - Accept-Encoding
-      Etag:
-      - W/"5a1013b62ba783c99df7e00bb99e2828"
-      X-Runtime:
-      - '0.178151'
-      X-Credential-Username:
-      - ualberta.library
-      X-Request-Id:
-      - 407de058-bfa4-469f-97f1-e093704ff518
-      X-Powered-By:
-      - Phusion Passenger(R) 6.0.10
       Server:
       - nginx/1.14.0 + Phusion Passenger(R) 6.0.10
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, PATCH, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - Accept,Access-Control-Allow-Origin,Access-Control-Expose-Headers,Access-Control-Allow-Methods,Access-Control-Allow-Headers,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Mx-ReqToken,X-Requested-With
-      Access-Control-Expose-Headers:
-      - Authorization
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"10.80243/h6bm-2w80","type":"dois","attributes":{"doi":"10.80243/h6bm-2w80","prefix":"10.80243","suffix":"h6bm-2w80","identifiers":[],"alternateIdentifiers":[],"creators":[],"titles":[],"publisher":null,"container":{},"publicationYear":null,"subjects":[],"contributors":[],"dates":[],"language":null,"types":{},"relatedIdentifiers":[],"sizes":[],"formats":[],"version":null,"rightsList":[],"descriptions":[],"geoLocations":[],"fundingReferences":[],"xml":null,"url":null,"contentUrl":null,"metadataVersion":0,"schemaVersion":null,"source":"api","isActive":false,"state":"draft","reason":null,"landingPage":null,"viewCount":0,"viewsOverTime":[],"downloadCount":0,"downloadsOverTime":[],"referenceCount":0,"citationCount":0,"citationsOverTime":[],"partCount":0,"partOfCount":0,"versionCount":0,"versionOfCount":0,"created":"2021-10-06T19:46:27.000Z","registered":null,"published":"","updated":"2021-10-06T19:46:27.000Z"},"relationships":{"client":{"data":{"id":"ualberta.library","type":"clients"}},"provider":{"data":{"id":"ualberta","type":"providers"}},"media":{"data":{"id":"10.80243/h6bm-2w80","type":"media"}},"references":{"data":[]},"citations":{"data":[]},"parts":{"data":[]},"partOf":{"data":[]},"versions":{"data":[]},"versionOf":{"data":[]}}}}'
+      string: '{"data":{"id":"10.80243/s5m9-cx93","type":"dois","attributes":{"doi":"10.80243/s5m9-cx93","prefix":"10.80243","suffix":"s5m9-cx93","identifiers":[],"alternateIdentifiers":[],"creators":[],"titles":[],"publisher":null,"container":{},"publicationYear":null,"subjects":[],"contributors":[],"dates":[],"language":null,"types":{},"relatedIdentifiers":[],"sizes":[],"formats":[],"version":null,"rightsList":[],"descriptions":[],"geoLocations":[],"fundingReferences":[],"xml":null,"url":null,"contentUrl":null,"metadataVersion":0,"schemaVersion":null,"source":"api","isActive":false,"state":"draft","reason":null,"landingPage":null,"viewCount":0,"viewsOverTime":[],"downloadCount":0,"downloadsOverTime":[],"referenceCount":0,"citationCount":0,"citationsOverTime":[],"partCount":0,"partOfCount":0,"versionCount":0,"versionOfCount":0,"created":"2021-10-12T15:54:03.000Z","registered":null,"published":"","updated":"2021-10-12T15:54:03.000Z"},"relationships":{"client":{"data":{"id":"ualberta.library","type":"clients"}},"provider":{"data":{"id":"ualberta","type":"providers"}},"media":{"data":{"id":"10.80243/s5m9-cx93","type":"media"}},"references":{"data":[]},"citations":{"data":[]},"parts":{"data":[]},"partOf":{"data":[]},"versions":{"data":[]},"versionOf":{"data":[]}}}}'
     http_version: 
-  recorded_at: Wed, 06 Oct 2021 19:46:27 GMT
+  recorded_at: Tue, 12 Oct 2021 15:54:03 GMT
 recorded_with: VCR 5.0.0

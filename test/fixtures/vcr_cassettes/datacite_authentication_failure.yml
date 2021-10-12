@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.test.datacite.org/dois/10.80243/p8wq-ps50
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"creators":[{"name":"Jose Jacobson"}],"titles":[{"title":"Clouds
+        of Witness"}],"descriptions":[{"description":"Fugit qui repellendus dolorem."}],"publisher":"Shoemaker
+        & Hoard Publishers","publicationYear":"2021","types":{"resourceType":"Text/Book","resourceTypeGeneral":"Text"},"url":"https://example.com/","schemaVersion":"http://datacite.org/schema/kernel-4"}}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.test.datacite.org
+      Content-Type:
+      - application/vnd.api+json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Tue, 12 Oct 2021 17:14:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 401 Unauthorized
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      Server:
+      - nginx/1.14.0 + Phusion Passenger(R) 6.0.10
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"status":"401","title":"Bad credentials."}]}'
+    http_version: 
+  recorded_at: Tue, 12 Oct 2021 17:14:13 GMT
+recorded_with: VCR 5.0.0

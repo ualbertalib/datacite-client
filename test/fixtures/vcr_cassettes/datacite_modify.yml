@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"attributes":{"creators":[{"name":"Judy Gutkowski"},{"name":"Jose
         Jacobson"}],"titles":[{"title":"Clouds of Witness"}],"descriptions":[{"description":"Fugit
-        qui repellendus dolorem."}],"publisher":"Shoemaker & Hoard Publishers","publicationYear":"2021","types":{"resourceType":"Text/Book","resourceTypeGeneral":"Text"},"url":"https://example.com/","schemaVersion":"http://datacite.org/schema/kernel-4","event":"publish","prefix":"10.80243"}}}'
+        qui repellendus dolorem."}],"publisher":"Shoemaker & Hoard Publishers","publicationYear":"2021","types":{"resourceType":"Text/Book","resourceTypeGeneral":"Text"},"url":"https://example.com/","schemaVersion":"http://datacite.org/schema/kernel-4"}}}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Oct 2021 21:24:59 GMT
+      - Tue, 12 Oct 2021 15:54:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -38,32 +38,14 @@ http_interactions:
       - max-age=0, private, must-revalidate
       Vary:
       - Accept-Encoding
-      Etag:
-      - W/"0b5c97585de9a3fe4e5e73faaf61b6ae"
-      X-Runtime:
-      - '0.403748'
-      X-Credential-Username:
-      - ualberta.library
-      X-Request-Id:
-      - cd304cc3-72a6-48ca-a21e-c55cf0264636
-      X-Powered-By:
-      - Phusion Passenger(R) 6.0.10
       Server:
       - nginx/1.14.0 + Phusion Passenger(R) 6.0.10
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, PATCH, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - Accept,Access-Control-Allow-Origin,Access-Control-Expose-Headers,Access-Control-Allow-Methods,Access-Control-Allow-Headers,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Mx-ReqToken,X-Requested-With
-      Access-Control-Expose-Headers:
-      - Authorization
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"id":"10.80243/p8wq-ps50","type":"dois","attributes":{"doi":"10.80243/p8wq-ps50","prefix":"10.80243","suffix":"p8wq-ps50","identifiers":[],"alternateIdentifiers":[],"creators":[{"name":"Judy
         Gutkowski","affiliation":[],"nameIdentifiers":[]},{"name":"Jose Jacobson","affiliation":[],"nameIdentifiers":[]}],"titles":[{"title":"Clouds
         of Witness"}],"publisher":"Shoemaker & Hoard Publishers","container":{},"publicationYear":2021,"subjects":[],"contributors":[],"dates":[],"language":null,"types":{"schemaOrg":"ScholarlyArticle","citeproc":"article-journal","bibtex":"article","ris":"RPRT","resourceTypeGeneral":"Text","resourceType":"Text/Book"},"relatedIdentifiers":[],"sizes":[],"formats":[],"version":null,"rightsList":[],"descriptions":[{"description":"Fugit
-        qui repellendus dolorem."}],"geoLocations":[],"fundingReferences":[],"xml":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuODAyNDMvUDhXUS1QUzUwPC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+SnVkeSBHdXRrb3dza2k8L2NyZWF0b3JOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5Kb3NlIEphY29ic29uPC9jcmVhdG9yTmFtZT4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+Q2xvdWRzIG9mIFdpdG5lc3M8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+U2hvZW1ha2VyICZhbXA7IEhvYXJkIFB1Ymxpc2hlcnM8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjE8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlRleHQiPlRleHQvQm9vazwvcmVzb3VyY2VUeXBlPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uLz4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkZ1Z2l0IHF1aSByZXBlbGxlbmR1cyBkb2xvcmVtLjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+Cg==","url":"https://example.com/","contentUrl":null,"metadataVersion":1,"schemaVersion":"http://datacite.org/schema/kernel-4","source":"api","isActive":true,"state":"findable","reason":null,"landingPage":null,"viewCount":0,"viewsOverTime":[],"downloadCount":0,"downloadsOverTime":[],"referenceCount":0,"citationCount":0,"citationsOverTime":[],"partCount":0,"partOfCount":0,"versionCount":0,"versionOfCount":0,"created":"2021-10-06T19:49:15.000Z","registered":"2021-10-06T19:49:15.000Z","published":"2021","updated":"2021-10-06T21:24:59.000Z"},"relationships":{"client":{"data":{"id":"ualberta.library","type":"clients"}},"provider":{"data":{"id":"ualberta","type":"providers"}},"media":{"data":{"id":"10.80243/p8wq-ps50","type":"media"}},"references":{"data":[]},"citations":{"data":[]},"parts":{"data":[]},"partOf":{"data":[]},"versions":{"data":[]},"versionOf":{"data":[]}}}}'
+        qui repellendus dolorem."}],"geoLocations":[],"fundingReferences":[],"xml":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuODAyNDMvUDhXUS1QUzUwPC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+SnVkeSBHdXRrb3dza2k8L2NyZWF0b3JOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5Kb3NlIEphY29ic29uPC9jcmVhdG9yTmFtZT4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+Q2xvdWRzIG9mIFdpdG5lc3M8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+U2hvZW1ha2VyICZhbXA7IEhvYXJkIFB1Ymxpc2hlcnM8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjE8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlRleHQiPlRleHQvQm9vazwvcmVzb3VyY2VUeXBlPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uLz4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkZ1Z2l0IHF1aSByZXBlbGxlbmR1cyBkb2xvcmVtLjwvZGVzY3JpcHRpb24+CiAgPC9kZXNjcmlwdGlvbnM+CjwvcmVzb3VyY2U+Cg==","url":"https://example.com/","contentUrl":null,"metadataVersion":1,"schemaVersion":"http://datacite.org/schema/kernel-4","source":"api","isActive":true,"state":"findable","reason":null,"landingPage":null,"viewCount":0,"viewsOverTime":[],"downloadCount":0,"downloadsOverTime":[],"referenceCount":0,"citationCount":0,"citationsOverTime":[],"partCount":0,"partOfCount":0,"versionCount":0,"versionOfCount":0,"created":"2021-10-06T19:49:15.000Z","registered":"2021-10-06T19:49:15.000Z","published":"2021","updated":"2021-10-12T15:54:30.000Z"},"relationships":{"client":{"data":{"id":"ualberta.library","type":"clients"}},"provider":{"data":{"id":"ualberta","type":"providers"}},"media":{"data":{"id":"10.80243/p8wq-ps50","type":"media"}},"references":{"data":[]},"citations":{"data":[]},"parts":{"data":[]},"partOf":{"data":[]},"versions":{"data":[]},"versionOf":{"data":[]}}}}'
     http_version: 
-  recorded_at: Wed, 06 Oct 2021 21:24:59 GMT
+  recorded_at: Tue, 12 Oct 2021 15:54:31 GMT
 recorded_with: VCR 5.0.0
