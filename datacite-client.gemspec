@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby client for Datacite API Version 2'
   spec.description   = 'Ruby client for Datacite API Version 2 (https://support.datacite.org/reference/dois-2)'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 2.6.0'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = 'http://mygemserver.com'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
+          'public gem pushes.'
   end
 
   spec.metadata['source_code_uri'] = 'https://github.com/ualbertalib/datacite-client'
@@ -49,6 +49,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rubocop', '~> 1.7'
+  spec.add_development_dependency 'rubocop-minitest'
+  spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'vcr', '5.0'
   spec.add_development_dependency 'webmock'
 end
