@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
-require 'datacite_client'
+require 'datacite'
 
 require 'minitest/autorun'
 require 'vcr'

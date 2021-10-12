@@ -30,30 +30,33 @@ prefix        # ENV['DATACITE_PREFIX']
 
 ## Usage
 
-Metadata is expected in the following format
+Attributes is expected in the following format
 ```
 {
-  data: {
-    attributes: {}
+  "doi": "10.5438/0012",
+  "creators": [{
+    "name": "DataCite Metadata Working Group"
+   }],
+  "titles": [{
+    "title": "DataCite Metadata Schema Documentation for the Publication and Citation of Research Data v4.0"
+  }],
+  "publisher": "DataCite e.V.",
+  "publicationYear": 2016,
+  "types": {
+    "resourceTypeGeneral": "Text"
   }
 }
 see https://support.datacite.org/reference/dois-2#put_dois-id for more information on specific attributes.
 ```
 ### Mint/Create
 `Datacite::Client.mint` will create a draft doi.
-`Datacite::Client.mint(metadata)` will reserve a new identifier and publish the metadata.
+`Datacite::Client.mint(attributes)` will reserve a new identifier and publish the metadata.
 ### Update
-`Datacite::Client.modify(doi, metadata)` will update the metadata.
+`Datacite::Client.modify(doi, attributes)` will update the metadata.
 
-There are three events 'publish', 'register', and 'hide'.  You can use `modify` with metadata in the following format to trigger these events.
+There are three events 'publish', 'register', and 'hide'.  You can use `modify` with these attributes in the following format to trigger these events.
 ```
-{
-  data: {
-    attributes: {
-        event: 'publish'
-    }
-  }
-}
+event: 'publish'
 ```
 ## Development
 

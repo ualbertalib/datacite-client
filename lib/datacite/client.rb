@@ -14,10 +14,10 @@ EMPTY_METADATA_HASH =
 module Datacite
   # Datacite Client
   class Client
-    def initialize(url:, request_klass:, body:)
+    def initialize(url:, request_klass:, attributes:)
       @datacite_url = url
       @request_klass = request_klass
-      @body = body
+      @body = metadata(attributes).to_json
     end
 
     def make_request
@@ -25,21 +25,21 @@ module Datacite
       Datacite::DOIResponse.new(JSON.parse(response.read_body, symbolize_names: true))
     end
 
-    def self.mint(metadata = nil)
+    def self.mint(attributes = nil)
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois"),
         request_klass: Net::HTTP::Post,
-        body: metadata.to_json
+        attributes: attributes
       )
 
       client.make_request
     end
 
-    def self.modify(doi, metadata)
+    def self.modify(doi, attributes)
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois/#{doi}"),
         request_klass: Net::HTTP::Put,
-        body: metadata.to_json
+        attributes: attributes
       )
       client.make_request
     end
@@ -58,6 +58,14 @@ module Datacite
       request.basic_auth(Datacite.config.username, Datacite.config.password)
       request.body = @body
       request
+    end
+
+    def metadata(attributes)
+      {
+        data: {
+          attributes: attributes
+        }
+      }
     end
   end
 end

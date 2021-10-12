@@ -3,7 +3,7 @@
 require_relative 'lib/datacite/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'datacite'
+  spec.name          = 'datacite-client'
   spec.version       = Datacite::VERSION
   spec.authors       = ['Tricia Jenkins']
   spec.email         = ['tricia.g.jenkins@gmail.com']
