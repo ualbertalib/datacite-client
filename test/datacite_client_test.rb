@@ -74,8 +74,8 @@ class DataciteTest < Minitest::Test
 
   def test_trigger_event_on_doi
     VCR.use_cassette('datacite_trigger_event') do
-      response = Datacite::Client.modify('10.80243/p8wq-ps50', event: Datacite::Event::HIDE,
-                                                               reason: 'unavailable | not publicly released')
+      response = Datacite::Client.modify('10.80243/p8wq-ps50', {}, event: Datacite::Event::HIDE,
+                                                                   reason: 'unavailable | not publicly released')
       assert_equal Datacite::State::REGISTERED, response.state
       assert_equal 'unavailable | not publicly released', response.reason
     end
