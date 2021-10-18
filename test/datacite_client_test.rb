@@ -2,8 +2,8 @@
 
 require 'test_helper'
 
-class DataciteTest < Minitest::Test
-  def test_that_it_has_a_version_number
+class DataciteTest < ActiveSupport::TestCase
+  test 'that it has a version number' do
     refute_nil ::Datacite::VERSION
   end
 
@@ -22,8 +22,7 @@ class DataciteTest < Minitest::Test
     schemaVersion: 'http://datacite.org/schema/kernel-4'
   }.freeze
 
-  # rubocop:disable Metrics/MethodLength
-  def test_that_doi_is_created_from_metadata
+  test 'that doi is created from metadata' do
     doi = Datacite::DOIResponse.new({ data: { attributes: ATTRIBUTES } })
     attributes = {
       creators: doi.creators,
@@ -40,9 +39,8 @@ class DataciteTest < Minitest::Test
     }
     assert_equal ATTRIBUTES, attributes
   end
-  # rubocop:enable Metrics/MethodLength
 
-  def test_minting_a_doi
+  test 'minting a doi' do
     VCR.use_cassette('datacite_minting') do
       response = Datacite::Client.mint
       assert_equal '10.80243/s5m9-cx93', response.doi
@@ -50,7 +48,7 @@ class DataciteTest < Minitest::Test
     end
   end
 
-  def test_minting_a_doi_with_metadata
+  test 'minting a doi with metadata' do
     VCR.use_cassette('datacite_minting_with_metadata') do
       response = Datacite::Client.mint(ATTRIBUTES.deep_dup)
       assert_equal '10.80243/7rpm-3q15', response.doi
@@ -58,7 +56,7 @@ class DataciteTest < Minitest::Test
     end
   end
 
-  def test_updating_a_doi
+  test 'updating a doi' do
     attributes = ATTRIBUTES.deep_dup
     # assigment directly to the key changes the hash for other tests
     attributes[:creators] = [{ name: 'Judy Gutkowski' }, { name: 'Jose Jacobson' }]
@@ -72,16 +70,17 @@ class DataciteTest < Minitest::Test
     end
   end
 
-  def test_trigger_event_on_doi
+  test 'trigger event on doi' do
     VCR.use_cassette('datacite_trigger_event') do
-      response = Datacite::Client.modify('10.80243/p8wq-ps50', {}, event: Datacite::Event::HIDE,
-                                                                   reason: 'unavailable | not publicly released')
+      response = Datacite::Client.modify('10.80243/p8wq-ps50', {},
+                                         event: { event: Datacite::Event::HIDE,
+                                                  reason: 'unavailable | not publicly released' })
       assert_equal Datacite::State::REGISTERED, response.state
       assert_equal 'unavailable | not publicly released', response.reason
     end
   end
 
-  def test_notfound_failure
+  test 'NotFound failure' do
     username, password = unset_credentials
     VCR.use_cassette('datacite_notfound_failure') do
       error = assert_raises(Datacite::NotFoundError) { Datacite::Client.mint }
@@ -90,7 +89,7 @@ class DataciteTest < Minitest::Test
     set_credentials(username, password)
   end
 
-  def test_authentication_failure
+  test 'authentication failure' do
     username, password = unset_password
     VCR.use_cassette('datacite_authentication_failure') do
       error = assert_raises(Datacite::UnauthorizedError) do
@@ -101,14 +100,14 @@ class DataciteTest < Minitest::Test
     set_credentials(username, password)
   end
 
-  def test_invalid_metadata_failure
+  test 'invalid metadata failure' do
     VCR.use_cassette('datacite_invalid_metadata_failure') do
       error = assert_raises(Datacite::UnprocessableError) { Datacite::Client.mint({ one: 'one' }) }
       assert_equal "Can't be blank", error.message
     end
   end
 
-  def test_invalid_identifier_failure
+  test 'invalid identifier failure' do
     attributes = ATTRIBUTES.deep_dup
     # assigment directly to the key changes the hash for other tests
     attributes[:creators] = [{ name: 'Judy Gutkowski' }, { name: 'Jose Jacobson' }]
