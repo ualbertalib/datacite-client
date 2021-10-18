@@ -4,13 +4,6 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-EMPTY_METADATA_HASH =
-  {
-    data: {
-      attributes: {}
-    }
-  }.freeze
-
 module Datacite
   # Datacite Client
   class Client
