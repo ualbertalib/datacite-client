@@ -13,7 +13,6 @@ module Datacite
       @body = metadata(attributes).to_json
     end
 
-    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def make_request
       response = http.request(request)
       case response
@@ -29,7 +28,6 @@ module Datacite
         raise Datacite::Error, error_description(response.read_body)
       end
     end
-    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
     def self.mint(attributes = {})
       attributes[:event] = Datacite::Event::PUBLISH unless attributes.empty?
