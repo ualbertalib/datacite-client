@@ -13,4 +13,12 @@ require 'rubocop/rake_task'
 
 RuboCop::RakeTask.new
 
+require 'rdoc/task'
+
+RDoc::Task.new do |rdoc|
+  rdoc.main = 'README.md'
+  rdoc.rdoc_dir = 'doc'
+  rdoc.rdoc_files.include('lib   /*.rb')
+end
+
 task default: %i[test rubocop]

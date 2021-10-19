@@ -15,6 +15,9 @@ Style/StringLiteralsInInterpolation:
 Layout/LineLength:
   Max: 120
 
+Style/DocumentationMethod:
+  Enabled: true
+
 # Avoid methods longer than 10 lines of code.
 Metrics/MethodLength:
   Enabled: false
