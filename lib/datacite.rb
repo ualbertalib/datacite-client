@@ -66,9 +66,9 @@ module Datacite
     #
     def initialize
       @host = ENV['DATACITE_HOST'] || 'api.test.datacite.org'
-      @username = ENV['DATACITE_USERNAME']
-      @password = ENV['DATACITE_PASSWORD']
-      @prefix = ENV['DATACITE_PREFIX']
+      @username = ENV.fetch('DATACITE_USERNAME', nil)
+      @password = ENV.fetch('DATACITE_PASSWORD', nil)
+      @prefix = ENV.fetch('DATACITE_PREFIX', nil)
     end
   end
 end

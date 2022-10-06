@@ -14,15 +14,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = 'http://mygemserver.com'
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against ' \
-          'public gem pushes.'
-  end
-
   spec.metadata['source_code_uri'] = 'https://github.com/ualbertalib/datacite-client'
   spec.metadata['changelog_uri'] = 'https://github.com/ualbertalib/datacite-client/CHANGELOG.md'
 
@@ -43,16 +34,17 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
 
-  spec.add_development_dependency 'activesupport'
+  spec.add_development_dependency 'activesupport', '~> 6.1', '>= 6.1.4.1'
   spec.add_development_dependency 'minitest', '~> 5.0'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'pry-byebug'
-  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'pry', '~> 0.14.1'
+  spec.add_development_dependency 'pry-byebug', '~> 3.9'
+  spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
   spec.add_development_dependency 'rubocop', '~> 1.7'
-  spec.add_development_dependency 'rubocop-minitest'
-  spec.add_development_dependency 'rubocop-performance'
-  spec.add_development_dependency 'rubocop-rake'
-  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'rubocop-minitest', '~> 0.17.0'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.12'
+  spec.add_development_dependency 'rubocop-rake', '~> 0.6.0'
+  spec.add_development_dependency 'simplecov', '~> 0.21.2'
   spec.add_development_dependency 'vcr', '5.0'
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'webmock', '~> 3.14'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
