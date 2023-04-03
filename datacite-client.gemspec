@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry-byebug', '~> 3.9'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
   spec.add_development_dependency 'rubocop', '~> 1.7'
-  spec.add_development_dependency 'rubocop-minitest', '~> 0.17.0'
+  spec.add_development_dependency 'rubocop-minitest', '~> 0.29.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.12'
   spec.add_development_dependency 'rubocop-rake', '~> 0.6.0'
   spec.add_development_dependency 'simplecov', '~> 0.22.0'
