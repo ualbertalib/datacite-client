@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby client for Datacite API Version 2'
   spec.description   = 'Ruby client for Datacite API Version 2 (https://support.datacite.org/reference/dois-2)'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 3.1.0'
 
   spec.metadata['source_code_uri'] = 'https://github.com/ualbertalib/datacite-client'
   spec.metadata['changelog_uri'] = 'https://github.com/ualbertalib/datacite-client/CHANGELOG.md'
