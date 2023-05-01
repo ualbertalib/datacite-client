@@ -52,7 +52,7 @@ module Datacite
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois"),
         request_klass: Net::HTTP::Post,
-        attributes: attributes
+        attributes:
       )
 
       client.make_request
@@ -79,7 +79,7 @@ module Datacite
       client = Client.new(
         url: URI("https://#{Datacite.config.host}/dois/#{doi}"),
         request_klass: Net::HTTP::Put,
-        attributes: attributes
+        attributes:
       )
       client.make_request
     end
@@ -122,7 +122,7 @@ module Datacite
     def metadata(attributes = {})
       {
         data: {
-          attributes: attributes
+          attributes:
         }
       }
     end
