@@ -34,17 +34,5 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
 
-  spec.add_development_dependency 'activesupport', '>= 6.1.4.1', '~> 7.0'
-  spec.add_development_dependency 'minitest', '~> 5.0'
-  spec.add_development_dependency 'pry', '~> 0.14.1'
-  spec.add_development_dependency 'pry-byebug', '~> 3.9'
-  spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
-  spec.add_development_dependency 'rubocop', '~> 1.7'
-  spec.add_development_dependency 'rubocop-minitest', '~> 0.17.0'
-  spec.add_development_dependency 'rubocop-performance', '~> 1.12'
-  spec.add_development_dependency 'rubocop-rake', '~> 0.6.0'
-  spec.add_development_dependency 'simplecov', '~> 0.22.0'
-  spec.add_development_dependency 'vcr', '5.0'
-  spec.add_development_dependency 'webmock', '~> 3.14'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
