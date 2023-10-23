@@ -12,7 +12,7 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.9'
   gem 'rake', '~> 13.0', '>= 13.0.6'
   gem 'rubocop', '~> 1.7'
-  gem 'rubocop-minitest', '~> 0.31.0'
+  gem 'rubocop-minitest', '~> 0.33.0'
   gem 'rubocop-performance', '~> 1.12'
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'simplecov', '~> 0.22.0'
