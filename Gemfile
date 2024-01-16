@@ -7,7 +7,7 @@ gemspec
 
 group :development, :test do
   gem 'activesupport', '>= 6.1.4.1', '~> 7.0'
-  gem 'minitest', '~> 5.0'
+  gem 'minitest', '~> 5.21'
   gem 'pry', '~> 0.14.1'
   gem 'pry-byebug', '~> 3.9'
   gem 'rake', '~> 13.0', '>= 13.0.6'
