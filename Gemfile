@@ -17,5 +17,5 @@ group :development, :test do
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'simplecov', '~> 0.22.0'
   gem 'vcr', '5.0'
-  gem 'webmock', '~> 3.14'
+  gem 'webmock', '~> 3.19'
 end
