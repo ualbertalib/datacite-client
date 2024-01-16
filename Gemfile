@@ -10,7 +10,7 @@ group :development, :test do
   gem 'minitest', '~> 5.21'
   gem 'pry', '~> 0.14.1'
   gem 'pry-byebug', '~> 3.9'
-  gem 'rake', '~> 13.0', '>= 13.0.6'
+  gem 'rake', '~> 13.1'
   gem 'rubocop', '~> 1.60'
   gem 'rubocop-minitest', '~> 0.34.3'
   gem 'rubocop-performance', '~> 1.12'
