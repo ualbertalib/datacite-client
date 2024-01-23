@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'activesupport', '>= 6.1.4.1', '~> 7.0'
+  gem 'activesupport', '~> 7.1'
   gem 'minitest', '~> 5.21'
   gem 'pry', '~> 0.14.1'
   gem 'pry-byebug', '~> 3.9'
