@@ -27,7 +27,7 @@ module Datacite
     def initialize(metadata)
       metadata[:data][:attributes].each do |(k, v)|
         self.class.attr_accessor(k) unless self.class.method_defined? k.to_sym
-        send("#{k}=", v)
+        send(:"#{k}=", v)
       end
     end
   end
