@@ -11,7 +11,7 @@ group :development, :test do
   gem 'pry', '~> 0.14.1'
   gem 'pry-byebug', '~> 3.9'
   gem 'rake', '~> 13.1'
-  gem 'rubocop', '~> 1.60'
+  gem 'rubocop', '~> 1.62'
   gem 'rubocop-minitest', '~> 0.34.5'
   gem 'rubocop-performance', '~> 1.20'
   gem 'rubocop-rake', '~> 0.6.0'
