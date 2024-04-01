@@ -13,7 +13,7 @@ group :development, :test do
   gem 'rake', '~> 13.1'
   gem 'rubocop', '~> 1.60'
   gem 'rubocop-minitest', '~> 0.34.5'
-  gem 'rubocop-performance', '~> 1.20'
+  gem 'rubocop-performance', '~> 1.21'
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'simplecov', '~> 0.22.0'
   gem 'vcr', '5.0'
